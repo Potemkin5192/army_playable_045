@@ -324,6 +324,25 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	prototype.frameBounds = frameBounds;
 	return prototype;
 	}
+(lib.Symbol1 = function(mode,startPosition,loop,reversed) {
+if (loop == null) { loop = true; }
+if (reversed == null) { reversed = false; }
+	var props = new Object();
+	props.mode = mode;
+	props.startPosition = startPosition;
+	props.labels = {};
+	props.loop = loop;
+	props.reversed = reversed;
+	cjs.MovieClip.apply(this,[props]);
+	// Layer_1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#3CB2A1").s().p("EhY5BZsQgzABAAgyMAAAix1QAAgxAzAAMCxzAAAQAzAAAAAxMAAACx1QAAAygzgBg");
+	this.shape.setTransform(574.05,574.05);
+	this.shape._off = true;
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(3).to({_off:false},0).wait(1));
+	this._renderFirstFrame();
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(0,0,1148.1,1148.1);
 (lib.trace_1 = function(mode,startPosition,loop,reversed) {
 if (loop == null) { loop = true; }
 if (reversed == null) { reversed = false; }
@@ -406,25 +425,6 @@ if (reversed == null) { reversed = false; }
 	this._renderFirstFrame();
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(-178,-3,354.8,76.2);
-(lib.Symbol1 = function(mode,startPosition,loop,reversed) {
-if (loop == null) { loop = true; }
-if (reversed == null) { reversed = false; }
-	var props = new Object();
-	props.mode = mode;
-	props.startPosition = startPosition;
-	props.labels = {};
-	props.loop = loop;
-	props.reversed = reversed;
-	cjs.MovieClip.apply(this,[props]);
-	// Layer_1
-	this.shape = new cjs.Shape();
-	this.shape.graphics.f("#3CB2A1").s().p("EhY5BZsQgzABAAgyMAAAix1QAAgxAzAAMCxzAAAQAzAAAAAxMAAACx1QAAAygzgBg");
-	this.shape.setTransform(574.05,574.05);
-	this.shape._off = true;
-	this.timeline.addTween(cjs.Tween.get(this.shape).wait(3).to({_off:false},0).wait(1));
-	this._renderFirstFrame();
-}).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(0,0,1148.1,1148.1);
 (lib.shining_anim = function(mode,startPosition,loop,reversed) {
 if (loop == null) { loop = true; }
 if (reversed == null) { reversed = false; }
@@ -517,7 +517,7 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 	// Layer_1
 	this.instance = new lib.dron_vent();
-	this.instance.setTransform(-264,-160,8.2603,5.0063);
+	this.instance.setTransform(-264,-160,8.2603,5.0062);
 	this.instance._off = true;
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(3).to({_off:false},0).wait(1));
 	this._renderFirstFrame();
@@ -572,6 +572,40 @@ if (reversed == null) { reversed = false; }
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
 	this._renderFirstFrame();
 }).prototype = getMCSymbolPrototype(lib.baseimg, new cjs.Rectangle(-1536,-1536,3072,3072.1), null);
+(lib.Symbol2 = function(mode,startPosition,loop,reversed) {
+if (loop == null) { loop = true; }
+if (reversed == null) { reversed = false; }
+	var props = new Object();
+	props.mode = mode;
+	props.startPosition = startPosition;
+	props.labels = {};
+	props.loop = loop;
+	props.reversed = reversed;
+	cjs.MovieClip.apply(this,[props]);
+	this.isSingleFrame = false;
+	// timeline functions:
+	this.frame_0 = function() {
+		if(this.isSingleFrame) {
+			return;
+		}
+		if(this.totalFrames == 1) {
+			this.isSingleFrame = true;
+		}
+		this.btn.addEventListener("mousedown", Button_MouseDown.bind(this));
+		function Button_MouseDown() {
+			CTA.onClick();
+		}
+	}
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+	// Layer_1
+	this.btn = new lib.Symbol1();
+	this.btn.name = "btn";
+	this.btn.setTransform(574.1,574.1,1,1,0,0,0,574.1,574.1);
+	new cjs.ButtonHelper(this.btn, 0, 1, 2, false, new lib.Symbol1(), 3);
+	this.timeline.addTween(cjs.Tween.get(this.btn).wait(1));
+	this._renderFirstFrame();
+}).prototype = getMCSymbolPrototype(lib.Symbol2, new cjs.Rectangle(0,0,1148.1,1148.1), null);
 (lib.shining_mc = function(mode,startPosition,loop,reversed) {
 if (loop == null) { loop = true; }
 if (reversed == null) { reversed = false; }
@@ -807,42 +841,6 @@ if (reversed == null) { reversed = false; }
 	this._renderFirstFrame();
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(-794.4,-370,1137.8,1122.3);
-(lib.cta = function(mode,startPosition,loop,reversed) {
-if (loop == null) { loop = true; }
-if (reversed == null) { reversed = false; }
-	var props = new Object();
-	props.mode = mode;
-	props.startPosition = startPosition;
-	props.labels = {};
-	props.loop = loop;
-	props.reversed = reversed;
-	cjs.MovieClip.apply(this,[props]);
-	this.isSingleFrame = false;
-	// timeline functions:
-	this.frame_0 = function() {
-		if(this.isSingleFrame) {
-			return;
-		}
-		if(this.totalFrames == 1) {
-			this.isSingleFrame = true;
-		}
-		this.btn.addEventListener("mousedown", Button_MouseDown.bind(this))
-		function Button_MouseDown() {
-			btnSFX.play()
-			window.dispatchEvent(new Event('playmain'))
-			CTA.onClick()
-		}
-	}
-	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
-	// Layer_1
-	this.btn = new lib.Symbol1();
-	this.btn.name = "btn";
-	this.btn.setTransform(574.1,574.1,1,1,0,0,0,574.1,574.1);
-	new cjs.ButtonHelper(this.btn, 0, 1, 2, false, new lib.Symbol1(), 3);
-	this.timeline.addTween(cjs.Tween.get(this.btn).wait(1));
-	this._renderFirstFrame();
-}).prototype = getMCSymbolPrototype(lib.cta, new cjs.Rectangle(0,0,1148.1,1148.1), null);
 (lib.build_base = function(mode,startPosition,loop,reversed) {
 if (loop == null) { loop = true; }
 if (reversed == null) { reversed = false; }
@@ -1106,7 +1104,7 @@ if (reversed == null) { reversed = false; }
 	// actions tween:
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 	// cta
-	this.cta = new lib.cta();
+	this.cta = new lib.Symbol2();
 	this.cta.name = "cta";
 	this.cta.setTransform(542.35,537.45,1,1,0,0,0,574.1,574.1);
 	this.timeline.addTween(cjs.Tween.get(this.cta).wait(1));
@@ -1140,8 +1138,8 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"index_atlas_P_1.png?1702986327675", id:"index_atlas_P_1"},
-		{src:"index_atlas_NP_1.jpg?1702986327675", id:"index_atlas_NP_1"}
+		{src:"index_atlas_P_1.png?1702986655647", id:"index_atlas_P_1"},
+		{src:"index_atlas_NP_1.jpg?1702986655647", id:"index_atlas_NP_1"}
 	],
 	preloads: []
 };
